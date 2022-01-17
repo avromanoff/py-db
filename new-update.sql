@@ -5,8 +5,7 @@ create table if not exists Genre (
 
 create table if not exists Artist (
 	id serial primary key,
-	name varchar (100) not null,
-	genre_name integer references Genre(id)
+	name varchar (100) not null
 );
 
 create table if not exists GenreArtist (
@@ -38,7 +37,7 @@ create table if not exists Tracks (
 create table if not exists Mix (
 	id serial primary key,
 	mix_name varchar (100) not null,
-	mix_year integer not null check(album_year > 1800)
+	mix_year integer not null check(mix_year > 1800)
 );
 
 create table if not exists TrackMix (
